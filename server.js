@@ -47,8 +47,6 @@ var usersRoute = router.route('/users');
 
 usersRoute
 .post(function(req, res) {
-    console.log(req);
-    console.log(req.body.name + req.body.email + "new user");
     if (req.body.name === undefined && req.body.email === undefined) 
         res.status(500).send({message: 'Validation Error: A name is required! An email is required!', data: []});
     else if (req.body.name === undefined)
